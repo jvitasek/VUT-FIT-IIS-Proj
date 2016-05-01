@@ -1,0 +1,24 @@
+{block content}
+
+<h2 n:block="title">{$name}</h2>
+
+<section class="disclaimer">
+	<p>Pro přepsání těchto zastávek vyberte linku {$name} na podstránce <a n:href="Cross:Default">zastávky linek</a>.
+	Po výběru a následném uložení se staré zastávky přepíšou.</p>
+</section>
+{if $user->isInRole('admin')}
+<table class="tab-linky table">
+	<thead>
+		<tr>
+			<th>Jméno zastávky</th>
+			<th>GPS zastávky</th>
+			<th class="last">Pořadí</th>
+		</tr>
+	</thead>
+	<tr n:foreach="$stops as $stop">
+		<td>{$stop->zas_jmeno}</td>
+		<td>{$stop->zas_gps}</td>
+		<td class="last"><form n:name="poradiForm"><input n:name="poradi" value="{$presenter->getPoradi($stop->cross_id)}" /><input n:name="cross_id" value="{$stop->cross_id}" /><input n:name="submit" /></form></td>
+	</tr>
+</table>
+{/if}

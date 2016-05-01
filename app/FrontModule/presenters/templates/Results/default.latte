@@ -1,0 +1,34 @@
+{block content}
+<h2 n:block="title">{$od_zastavky} – {$do_zastavky}</h2>
+
+<table class="table">
+	<thead>
+		<tr>
+			<th>Odkud/kam</th>
+			<th>Příjezd</th>
+			<th>Odjezd</th>
+			<th>Linka</th>
+		</tr>
+	</thead>
+	{foreach $casy as $linka => $casy}
+	<?php
+		$regex = preg_match("#([0-9]+);(.*);(.*)#", $casy, $match);
+		$linka_id = $match[1];
+		$odjezd = $match[2];
+		$prijezd = $match[3];
+		$linka_cislo = $template->presenter->getCisloLinky($linka_id);
+	?>
+	<tr>
+		<td>{$od_zastavky}</td>
+		<td>></td>
+		<td>{$odjezd}</td>
+		<td class="last">{$linka_cislo}</td>
+	</tr>
+	<tr class="last-row">
+		<td>{$do_zastavky}</td>
+		<td>{$prijezd}</td>
+		<td>></td>
+		<td class="last">{$linka_cislo}</td>
+	</tr>
+	{/foreach}
+</table>

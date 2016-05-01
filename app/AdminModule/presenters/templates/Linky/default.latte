@@ -1,0 +1,23 @@
+{block content}
+{if $user->isInRole('admin')}
+{control linkaForm}
+{/if}
+
+<table class="tab-linky table">
+	<thead>
+		<tr>
+			<th>Název linky</th>
+			<th>Časy linky</th>
+			<th>Číslo linky</th>
+			<th>Typ linky</th>
+			{if $user->isInRole('admin')}<th class="last">Smazat</th>{/if}
+		</tr>
+	</thead>
+	<tr n:foreach="$linky as $linka">
+		<td><a n:href="Linky:zastavky $linka->id">{$linka->jmeno}</a></td>
+		<td><a n:href="Linky:casy $linka->id">Upravit časy</a></td>
+		<td>{$linka->cislo}</td>
+		<td>{$linka->typ}</td>
+		{if $user->isInRole('admin')}<td class="last"><a n:href="Delete! $linka->id"><i class="fa fa-times del"></i></a></td>{/if}
+	</tr>
+</table>

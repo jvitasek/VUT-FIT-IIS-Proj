@@ -1,0 +1,21 @@
+{block content}
+{if $user->isInRole('admin')}
+{control stopForm}
+{/if}
+
+<table class="tab-linky table">
+	<thead>
+		<tr>
+			<th>Název zastávky</th>
+			<th>GPS</th>
+			<th>Bezbariérovost</th>
+			{if $user->isInRole('admin')}<th class="last">Smazat</th>{/if}
+		</tr>
+	</thead>
+	<tr n:foreach="$stops as $stop">
+		<td>{$stop->jmeno}</td>
+		<td>{$stop->gps}</td>
+		<td>{$stop->bezbarierovost == 0 ? 'Ne' : 'Ano'}</td>
+		{if $user->isInRole('admin')}<td class="last"><a n:href="Delete! $stop->id"><i class="fa fa-times del"></i></a></td>{/if}
+	</tr>
+</table>

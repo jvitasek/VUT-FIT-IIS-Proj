@@ -1,0 +1,18 @@
+{block content}
+
+<h2 n:block="title">Linky</h2>
+
+<table class="table">
+	<thead>
+		<tr>
+			<th>Číslo</th>
+			<th>Jméno</th>
+			<th>Typ</th>
+		</tr>
+	</thead>
+	<tr n:foreach="$linky as $linka">
+		<td>{$linka->cislo}</td>
+		<td>{$linka->jmeno}</td>
+		<td>{$linka->typ}</td>
+	</tr>
+</table>

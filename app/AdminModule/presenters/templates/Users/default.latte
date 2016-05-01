@@ -1,0 +1,19 @@
+{block content}
+{if $user->isInRole('admin')}
+{control userForm}
+{/if}
+
+<table class="tab-linky table">
+	<thead>
+		<tr>
+			<th>Login</th>
+			<th>Role</th>
+			{if $user->isInRole('admin')}<th class="last">Smazat</th>{/if}
+		</tr>
+	</thead>
+	<tr n:foreach="$users as $uziv">
+		<td>{$uziv->login}</td>
+		<td>{$uziv->role}</td>
+		{if $user->isInRole('admin')}<td class="last"><a n:href="Delete! $uziv->id"><i class="fa fa-times del"></i></a></td>{/if}
+	</tr>
+</table>

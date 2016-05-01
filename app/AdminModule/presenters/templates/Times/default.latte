@@ -1,0 +1,21 @@
+{block content}
+{if $user->isInRole('admin')}
+{control timesForm}
+{/if}
+
+<table class="tab-linky table">
+	<thead>
+		<tr>
+			<th>Ze zastávky</th>
+			<th>Do zastávky</th>
+			<th>Čas</th>
+			{if $user->isInRole('admin')}<th class="last">Smazat</th>{/if}
+		</tr>
+	</thead>
+	<tr n:foreach="$times as $time">
+		<td>{$time->jmeno1}</td>
+		<td>{$time->jmeno2}</td>
+		<td>{$time->doba->format('%H:%I:%S')}</td>
+		{if $user->isInRole('admin')}<td class="last"><a n:href="Delete! $time->id"><i class="fa fa-times del"></i></a></td>{/if}
+	</tr>
+</table>

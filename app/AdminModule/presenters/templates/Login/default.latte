@@ -1,0 +1,10 @@
+{block content}
+{if !$user->isLoggedIn()}
+	<div id="wrapper">
+		<div id="main">
+			{control loginForm}
+		</div>
+	</div>
+{else}
+	Již jste přihlášeni!
+{/if}

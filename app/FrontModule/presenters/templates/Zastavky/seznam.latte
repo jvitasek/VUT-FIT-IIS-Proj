@@ -1,0 +1,18 @@
+{block content}
+
+<h2 n:block="title">Zastávky</h2>
+
+<table class="table">
+	<thead>
+		<tr>
+			<th>Jméno</th>
+			<th>GPS</th>
+			<th>Bezbariérovost</th>
+		</tr>
+	</thead>
+	<tr n:foreach="$zastavky as $zastavka">
+		<td>{$zastavka->jmeno}</td>
+		<td>{$zastavka->gps}</td>
+		<td>{$zastavka->bezbarierovost}</td>
+	</tr>
+</table>

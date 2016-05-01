@@ -1,0 +1,215 @@
+body, html, #wrapper {
+    width: 100%;
+    height: 100%
+}
+
+.login-bg {
+	background: white url('../images/bg-login.jpg') no-repeat 10% 50%;
+}
+
+.container {
+	width: 80%;
+	height: 100%;
+}
+
+a {
+	color: #2C82C9;
+}
+
+a:hover {
+	color: #2969B0;
+	text-decoration: none;
+}
+
+body {
+	font-size: 15px;
+	line-height: 1.6;
+	color: #333;
+	background: white;
+}
+
+h1 {
+	color: #3484D2;
+}
+
+#ajax-spinner {
+	margin: 15px 0 0 15px;
+	padding: 13px;
+	background: white url('../images/spinner.gif') no-repeat 50% 50%;
+	font-size: 0;
+	z-index: 123456;
+	display: none;
+}
+
+.flash {
+	color: black;
+	background: #FFF9D7;
+	border: 1px solid #E2C822;
+	padding: 1em;
+	margin: 1em 0;
+}
+
+a[href^="#error:"] {
+	background: red;
+	color: white;
+}
+
+form th, form td {
+	vertical-align: top;
+	font-weight: normal;
+}
+
+form th {
+	text-align: right;
+}
+
+form .required label {
+	font-weight: bold;
+}
+
+form .error {
+	color: #D00;
+	font-weight: bold;
+}
+
+nav {
+	margin: 20px 0;
+}
+
+#wrapper {
+    display: table;
+}
+
+#main {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.login-form {
+	display: table;
+	margin: 0 auto;
+}
+
+.login-form input {
+	border: none;
+	outline: none;
+	background-color: #FFF;
+	padding: 6px;
+	margin-bottom: 10px;
+}
+
+.login-form .button {
+	outline: none;
+    border: none;
+    background: #F1C40F;
+    padding: 10px;
+    width: 100%;
+    color: #FFF;
+    text-align: center;
+    font-weight: bold;
+    box-shadow: 0 4px 0 #F49C14;
+    font-size: 124%;
+}
+
+.login-form .button:hover {
+	box-shadow: 0 6px 0 #F49C14;
+}
+
+
+/* FLASHES */
+.success {
+	color: white;
+    background: #61BD6D;
+    border: 1px solid #41A85F;
+}
+
+.error {
+	color: white;
+	background: #E84C3D;
+	border: 1px solid #C1392B;
+}
+
+/* FORMY */
+form label {
+	display: none;
+}
+
+#frm-crossForm label {
+	display: block;
+}
+
+#frm-poradiForm input {
+	width: 6%;
+    text-align: center;
+}
+
+form select {
+	width: 100%;
+}
+
+input[type=checkbox] {
+	margin-right: 8px;
+}
+
+input[type="submit"] {
+	border: none;
+    outline: none;
+    width: 100%;
+    margin-top: 10px;
+    background: #EB6B56;
+    line-height: 33px;
+    color: white;
+    font-weight: bold;
+    box-shadow: 0 4px 0 #D14841;
+    margin-bottom: 23px;
+}
+
+input[type="submit"]:hover {
+    box-shadow: 0 6px 0 #D14841;
+}
+
+.required:after {
+	content: " *";
+    display: inline-block;
+    margin-left: 5px;
+    top: -45px;
+    color: #E14938;
+    right: -102%;
+}
+
+label:after {
+	content: ""!important;
+}
+
+.btn-small {
+	display: block;
+	width: 173px!important;
+}
+
+/* LINKY TABLE */
+.tab-linky .last {
+	text-align: right;
+}
+
+
+.tab-linky td, .tab-linky th {
+	padding-right: 50px;
+}
+
+.tab-linky .del {
+	color: #E84C3D;
+}
+
+.check {
+	color: #61BD6D;
+}
+
+.submit-poradi {
+	width: 59px!important;
+    height: 33px!important;
+    font-size: 83%!important;
+    margin-left: 20px!important;
+}
+
+

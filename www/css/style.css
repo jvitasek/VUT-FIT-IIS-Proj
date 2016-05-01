@@ -1,0 +1,162 @@
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+.login-bg {
+	background: white url('../images/bg-login.jpg') no-repeat 10% 50%;
+}
+
+.container {
+	width: 80%;
+	height: 100%;
+}
+
+body {
+	font-size: 15px;
+	line-height: 1.6;
+	color: #333;
+	background: white;
+}
+
+h1 {
+	color: #3484D2;
+}
+
+#ajax-spinner {
+	margin: 15px 0 0 15px;
+	padding: 13px;
+	background: white url('../images/spinner.gif') no-repeat 50% 50%;
+	font-size: 0;
+	z-index: 123456;
+	display: none;
+}
+
+.flash {
+	color: black;
+	background: #FFF9D7;
+	border: 1px solid #E2C822;
+	padding: 1em;
+	margin: 1em 0;
+}
+
+a[href^="#error:"] {
+	background: red;
+	color: white;
+}
+
+form th, form td {
+	vertical-align: top;
+	font-weight: normal;
+}
+
+form th {
+	text-align: right;
+}
+
+form .required label {
+	font-weight: bold;
+}
+
+form .error {
+	color: #D00;
+	font-weight: bold;
+}
+
+nav {
+	margin: 20px 0;
+}
+
+#wrapper {
+    display: table;
+}
+
+#main {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.login-form {
+	display: table;
+	margin: 0 auto;
+}
+
+.login-form input {
+	border: none;
+	outline: none;
+	background-color: #FFF;
+	padding: 6px;
+	margin-bottom: 10px;
+}
+
+.login-form .button {
+	outline: none;
+    border: none;
+    background: #F1C40F;
+    padding: 10px;
+    width: 100%;
+    color: #FFF;
+    text-align: center;
+    font-weight: bold;
+    box-shadow: 0 4px 0 #F49C14;
+    font-size: 124%;
+}
+
+.login-form .button:hover {
+	box-shadow: 0 6px 0 #F49C14;
+}
+
+.success {
+	color: white;
+    background: #61BD6D;
+    border: 1px solid #41A85F;
+}
+
+.last-row {
+	border-bottom: 4px solid #D1D5D8;
+}
+
+form th, form td {
+	margin-bottom: 10px;
+}
+
+form label {
+	text-align: left;
+	display: block;
+	margin-bottom: -13px;
+}
+
+select {
+	width: 100%;
+}
+
+input[type="submit"] {
+	border: none;
+    outline: none;
+    width: 100%;
+    margin-top: 12px;
+    background: #EB6B56;
+    line-height: 33px;
+    color: white;
+    font-weight: bold;
+    box-shadow: 0 4px 0 #D14841;
+}
+
+input[type="submit"]:hover {
+	box-shadow: 0 6px 0 #D14841;
+}
+
+.required:after {
+	content: " *";
+    display: inline-block;
+    margin-left: 5px;
+    top: -45px;
+    color: #E14938;
+    right: -102%;
+}
+
+label:after {
+	content: ""!important;
+}

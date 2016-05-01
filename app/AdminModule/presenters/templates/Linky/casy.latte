@@ -1,0 +1,22 @@
+{block content}
+<h2 n:block="title">Časy linky id: {$id_linky}</h2>
+{if $user->isInRole('admin')}
+<form n:name="linkaCasyForm">
+	<input n:name="cas" />
+	<input n:name="id_linky" value="{$id_linky}" />
+	<input n:name="send" n:class="btn-small" />
+</form>
+{/if}
+
+<table class="tab-linky table">
+	<thead>
+		<tr>
+			<th>Čas</th>
+			{if $user->isInRole('admin')}<th class="last">Smazat</th>{/if}
+		</tr>
+	</thead>
+	<tr n:foreach="$casy as $cas">
+		<td>{$cas->cas->format('%H:%I:%S')}</td>
+		{if $user->isInRole('admin')}<td class="last"><a n:href="DeleteCas! $cas->id"><i class="fa fa-times del"></i></a></td>{/if}
+	</tr>
+</table>

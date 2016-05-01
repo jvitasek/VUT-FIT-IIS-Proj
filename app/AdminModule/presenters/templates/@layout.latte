@@ -1,0 +1,63 @@
+{**
+ * @param string   $basePath web base path
+ * @param array    $flashes  flash messages
+ *}
+
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+	<meta charset="utf-8">
+
+	<title>{ifset title}{include title|striptags} | {/ifset}Administrace | IIS</title>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="{$basePath}/backend/css/style.css">
+	<link rel="shortcut icon" href="{$basePath}/favicon.ico">
+	<meta name="viewport" content="width=device-width">
+	{block head}{/block}
+</head>
+
+<body n:class="$presenter->isLinkCurrent('Login:') ? login-bg">
+	<div class="container">
+		<nav n:if="!$presenter->isLinkCurrent('Login:')">
+			<ul class="nav nav-tabs">
+			  <li role="presentation" n:class="$presenter->isLinkCurrent('Admin:default') ? active"><a n:href="Admin:default">Panel</a></li>
+			  <li role="presentation" n:class="$presenter->isLinkCurrent('Linky:*') || $presenter->isLinkCurrent('Cross:*') ? active"><a class="dropdown-toggle" data-toggle="dropdown" n:href="Linky:default" role="button" aria-haspopup="true" aria-expanded="false">Linky <span class="caret"></span></a>
+			  	<ul class="dropdown-menu">
+			    	<li role="presentation"><a n:href="Linky:">Linky</a></li>
+			    	<li role="presentation"><a n:href="Cross:">Zastávky linky</a></li>
+			    </ul>
+			  </li>
+			  <li role="presentation" n:class="$presenter->isLinkCurrent('Stops:*') || $presenter->isLinkCurrent('Times:*') ? active"><a class="dropdown-toggle" data-toggle="dropdown" n:href="Stops:default" role="button" aria-haspopup="true" aria-expanded="false">Zastávky <span class="caret"></span></a>
+			  	<ul class="dropdown-menu">
+			    	<li role="presentation"><a n:href="Stops:">Seznam</a></li>
+			    	<li role="presentation"><a n:href="Times:">Časy</a></li>
+			    </ul>
+			  </li>
+			  <li role="presentation" n:class="$presenter->isLinkCurrent('Users:default') ? active"><a n:href="Users:default">Uživatelé</a></li>
+			  <li n:if="!$user->isLoggedIn()" role="presentation"><a n:href="Login:">Login</a></li>
+			  <li n:if="$user->isLoggedIn()" role="presentation"><a n:href="Login:logout">Logout</a></li>
+			  <li role="presentation" style="float: right;"><a n:href=":Front:Homepage:Default">Frontend</a></li>
+			</ul>
+		</nav>
+		<div n:foreach="$flashes as $flash" n:class="flash, $flash->type">{$flash->message}</div>
+		{if !$presenter->isLinkCurrent('Login:')}
+			{if $user->isLoggedIn()}
+				{include content}
+			{else}
+				<p>Pro zobrazení této stránky je nutné přihlášení
+			{/if}
+		{else}
+			{include content}
+		{/if}
+	</div>
+
+	{block scripts}
+	<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
+	<script src="//nette.github.io/resources/js/netteForms.min.js"></script>
+	<script src="{$basePath}/backend/js/main.js"></script>
+	{/block}
+</body>
+</html>

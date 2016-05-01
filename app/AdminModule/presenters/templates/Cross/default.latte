@@ -1,0 +1,7 @@
+{block content}
+<section class="disclaimer">
+	<p>Při uložení se všechny zastávky týkající se dané linky <b>smažou</b> a přepíšou se nově vybranými.</p>
+</section>
+{if $user->isInRole('admin')}
+{control crossForm}
+{/if}
